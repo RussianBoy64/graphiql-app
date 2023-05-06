@@ -1,0 +1,17 @@
+@import "./styles/normalize";
+@import "./styles/colors";
+
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap");
+
+body {
+  position: relative;
+  font-family: "Titillium Web", sans-serif;
+  color: $primary-dark;
+  background-color: $primary-light;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+}
