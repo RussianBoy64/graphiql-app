@@ -1,0 +1,26 @@
+@import "@styles/colors.scss";
+@import "@styles/templates.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  min-height: 3.5rem;
+  background-color: transparent;
+
+  @include transition;
+}
+
+.headerLayout {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  background-color: $primary-light;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 0px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 0px 7px -3px;
+}
