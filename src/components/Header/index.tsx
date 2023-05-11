@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import Wrapper from "@components/Wrapper";
-import Logo from "@components/Logo";
-import Navigation from "@components/UI/Navigation";
-
+import { Logo, Navigation, Wrapper } from "..";
 import styles from "./styles.module.scss";
 
-function Header() {
+export const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
   const headerStyles = [styles.header];
 
@@ -30,6 +27,4 @@ function Header() {
       </Wrapper>
     </header>
   );
-}
-
-export default Header;
+};

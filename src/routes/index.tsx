@@ -1,25 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import App from "../App";
-import WelcomePage from "./WelcomePage";
-import SignInPage from "./SignInPage";
-import SignUpPage from "./SignUpPage";
-import MainPage from "./MainPage";
-import NotFoundPage from "./NotFoundPage";
+import {
+  MainPage,
+  NotFoundPage,
+  SignInPage,
+  SignUpPage,
+  WelcomePage,
+} from "../Pages";
+import { IRoutes, routesPath } from "../types";
 
-enum routesPath {
-  WelcomePage = "/",
-  SignInPage = "/sing-in",
-  SignUpPage = "/sing-up",
-  MainPage = "/main",
-  NotFoundPage = "*",
-}
-
-interface IRoutes {
-  [key: string]: { id: number; name: string; path: routesPath; element: JSX.Element };
-}
-
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: routesPath.WelcomePage,
     element: <App />,
@@ -33,7 +24,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-const routes: IRoutes = {
+export const routes: IRoutes = {
   welcome: {
     id: 1,
     name: "Main page",
@@ -52,7 +43,12 @@ const routes: IRoutes = {
     path: routesPath.SignUpPage,
     element: <SignUpPage />,
   },
-  main: { id: 4, name: "Main page", path: routesPath.MainPage, element: <MainPage /> },
+  main: {
+    id: 4,
+    name: "Main page",
+    path: routesPath.MainPage,
+    element: <MainPage />,
+  },
   notFound: {
     id: 5,
     name: "Main page",
@@ -60,7 +56,3 @@ const routes: IRoutes = {
     element: <NotFoundPage />,
   },
 };
-
-export default router;
-
-export { routes };

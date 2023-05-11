@@ -7,10 +7,8 @@ interface IWrapper {
   children: ReactNode;
 }
 
-function Wrapper({ layout, children }: IWrapper) {
+export const Wrapper = ({ layout, children }: IWrapper) => {
   const wrapperStyles = [styles.wrapper, layout];
 
   return <div className={wrapperStyles.join(" ")}>{children}</div>;
-}
-
-export default Wrapper;
+};

@@ -3,7 +3,7 @@ import { routes } from "@routes/index";
 
 import styles from "./styles.module.scss";
 
-function Logo() {
+export const Logo = () => {
   const { welcome } = routes;
 
   return (
@@ -11,6 +11,4 @@ function Logo() {
       <NavLink to={welcome.path}>Raccoons GraphQL</NavLink>
     </h1>
   );
-}
-
-export default Logo;
+};
