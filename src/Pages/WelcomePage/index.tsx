@@ -1,7 +1,7 @@
 import { AboutStudent } from "@components/index";
 import { aboutStudent } from "../../utils/aboutStudents";
 
-function WelcomePage() {
+export const WelcomePage = () => {
   return (
     <>
       <h1>Welcome Page</h1>
@@ -18,6 +18,4 @@ function WelcomePage() {
       })}
     </>
   );
-}
-
-export default WelcomePage;
+};

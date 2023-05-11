@@ -3,7 +3,7 @@ import { routes } from "@routes/index";
 
 import buttonStyles from "@components/UI/Button/styles.module.scss";
 
-function Navigation() {
+export const Navigation = () => {
   //TODO: add navigation styles
   const { signIn, signUp } = routes;
 
@@ -17,6 +17,4 @@ function Navigation() {
       </NavLink>
     </nav>
   );
-}
-
-export default Navigation;
+};

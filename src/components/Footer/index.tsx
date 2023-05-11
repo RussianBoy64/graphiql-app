@@ -1,15 +1,17 @@
-import Wrapper from "@components/Wrapper";
-
+import { Wrapper } from "..";
 import styles from "./styles.module.scss";
 
-function Footer() {
+export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <Wrapper layout={styles.footerLayout}>
         <div className={styles.authorInfo}>
           <div className={styles.authorInfo__item}>
             <a href="https://rs.school/js/">
-              <img src="https://rs.school/images/rs_school_js.svg" alt="RS School" />
+              <img
+                src="https://rs.school/images/rs_school_js.svg"
+                alt="RS School"
+              />
             </a>
           </div>
           <div className={styles.authorInfo__item}>
@@ -47,6 +49,4 @@ function Footer() {
       </Wrapper>
     </footer>
   );
-}
-
-export default Footer;
+};
