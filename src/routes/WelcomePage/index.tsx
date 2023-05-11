@@ -1,5 +1,11 @@
+import { AboutAliaksandra } from "@components/index";
+
 function WelcomePage() {
-  return <div>WelcomePage</div>;
+  return (
+    <>
+      <AboutAliaksandra />
+    </>
+  );
 }
 
 export default WelcomePage;

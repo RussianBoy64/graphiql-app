@@ -1,0 +1,32 @@
+.images {
+  height: 25vw;
+  border-radius: 10px;
+}
+
+.wrapper_section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5px;
+  padding-top: 70px;
+}
+
+.wrapper_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.name {
+  font-size: 2.2em;
+}
+
+.profession {
+  font-size: 1.5em;
+}
+
+.decription {
+  font-size: 1.1em;
+  max-width: 600px;
+}
