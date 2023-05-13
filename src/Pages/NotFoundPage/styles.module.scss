@@ -1,0 +1,43 @@
+@import "@styles/colors.scss";
+@import "@styles/templates.scss";
+
+.NotFoundPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 80vh;
+  min-height: 500px;
+  text-align: center;
+
+  &__title {
+    @include textSecondary(8rem);
+    color: $accent-light;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  &__subtitle {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  &__text {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 500px) {
+  .NotFoundPage {
+    &__title {
+      @include textSecondary(4rem);
+    }
+
+    &__subtitle {
+      font-size: 1rem;
+    }
+  }
+}
