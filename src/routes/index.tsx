@@ -1,13 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import App from "../App";
-import {
-  MainPage,
-  NotFoundPage,
-  SignInPage,
-  SignUpPage,
-  WelcomePage,
-} from "../Pages";
+import { MainPage, NotFoundPage, SignInPage, SignUpPage, WelcomePage } from "../Pages";
 import { IRoutes, routesPath } from "../types";
 
 export const router = createBrowserRouter([
@@ -27,7 +21,7 @@ export const router = createBrowserRouter([
 export const routes: IRoutes = {
   welcome: {
     id: 1,
-    name: "Main page",
+    name: "Welcome page",
     path: routesPath.WelcomePage,
     element: <WelcomePage />,
   },
@@ -51,7 +45,7 @@ export const routes: IRoutes = {
   },
   notFound: {
     id: 5,
-    name: "Main page",
+    name: "Not found page",
     path: routesPath.NotFoundPage,
     element: <NotFoundPage />,
   },
