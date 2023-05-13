@@ -1,6 +1,13 @@
 @import "@styles/colors.scss";
+@import "@styles/templates.scss";
 
 .logo {
-  font-size: 1.5rem;
+  @include textSecondary(1.5rem);
   color: $accent-dark;
+}
+
+@media (max-width: 500px) {
+  .logo {
+    @include textSecondary(0.8rem);
+  }
 }

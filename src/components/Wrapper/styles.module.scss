@@ -4,3 +4,9 @@
   max-width: 1440px;
   height: 100%;
 }
+
+@media (max-width: 500px) {
+  .wrapper {
+    padding: 0 0.5rem;
+  }
+}
