@@ -1,6 +1,10 @@
 import styles from "./styles.module.scss";
 
-export const Button = () => {
+interface IButton {
+  buttonText: string;
+}
+
+export const Button = ({ buttonText }: IButton) => {
   //TODO: create Button component
-  return <button>Button</button>;
+  return <button className={styles.button}>{buttonText}</button>;
 };

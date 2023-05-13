@@ -1,14 +1,14 @@
 import { NavLink } from "react-router-dom";
 import { routes } from "@routes/index";
 
+import styles from "./styles.module.scss";
 import buttonStyles from "@components/UI/Button/styles.module.scss";
 
 export const Navigation = () => {
-  //TODO: add navigation styles
   const { signIn, signUp } = routes;
 
   return (
-    <nav>
+    <nav className={styles.nav}>
       <NavLink to={signIn.path} key={signIn.id} className={buttonStyles.button}>
         {signIn.name}
       </NavLink>
