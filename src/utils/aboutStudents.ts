@@ -16,6 +16,6 @@ export const aboutStudent = [
     name: "Vladimir Kozlachkov",
     profession: "Front End Developer",
     photo: PhotoVladimir,
-    decription: `I\`am frontend developer from Saratov. I like to play football, travel and drink beer. My dream is to become sucsessfull senior developer and create usefull aplications that help people make it\`s life better.`,
+    decription: `I\`am frontend developer from Saratov. I like to play football, travel and drink beer. My dream is to become successful senior developer and create usefull aplications that help people make it\`s life better.`,
   },
 ];
