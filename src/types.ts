@@ -14,3 +14,8 @@ export interface IRoutes {
     element: JSX.Element;
   };
 }
+
+export enum inputTypes {
+  email = "email",
+  password = "password",
+}
