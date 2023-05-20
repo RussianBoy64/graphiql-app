@@ -1,0 +1,15 @@
+@import "@styles/colors";
+@import "@styles/templates";
+
+.signUpPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+
+  &__title {
+    margin-bottom: 1rem;
+    @include textSecondary(1.2rem);
+    color: $accent-dark;
+  }
+}
