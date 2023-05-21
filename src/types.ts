@@ -18,4 +18,5 @@ export interface IRoutes {
 export enum inputTypes {
   email = "email",
   password = "password",
+  text = "text",
 }
