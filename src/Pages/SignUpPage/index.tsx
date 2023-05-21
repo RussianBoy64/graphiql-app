@@ -1,8 +1,9 @@
 import { Form } from "@components/UI/Form";
 import { EmailInput } from "@src/components/UI/EmailInput";
+import { PasswordInput } from "@src/components/UI/PasswordInput";
+import { Button } from "@src/components";
 
 import styles from "./styles.module.scss";
-import { PasswordInput } from "@src/components/UI/PasswordInput";
 
 export const SignUpPage = () => {
   return (
@@ -28,6 +29,16 @@ export const SignUpPage = () => {
             console.log(target.value);
           }}
         />
+        <PasswordInput
+          labelText="Confirm password:"
+          inputValue={"password"}
+          inputPlaceholder={"Confirm password"}
+          changeHandler={(event) => {
+            const target = event.target as HTMLInputElement;
+            console.log(target.value);
+          }}
+        />
+        <Button buttonText="Register" />
       </Form>
     </section>
   );
