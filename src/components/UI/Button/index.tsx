@@ -5,6 +5,5 @@ interface IButton {
 }
 
 export const Button = ({ buttonText }: IButton) => {
-  //TODO: create Button component
   return <button className={styles.button}>{buttonText}</button>;
 };
