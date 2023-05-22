@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Footer, Header, Wrapper } from "./components";
+import { Footer, Header, Wrapper } from "@components/index";
 import styles from "./app.module.scss";
 
 function App() {
