@@ -15,7 +15,7 @@ export const validatePassword = (password: string) => {
     return false;
   }
 
-  // Checking for at least one special character (!, @, #, $, %, ^, &, *)
+  // Checking for at least one special symbol (!, @, #, $, %, ^, &, *)
   if (!/[!@#$%^&*]/.test(password)) {
     return false;
   }
