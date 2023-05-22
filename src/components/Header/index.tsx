@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Logo, Navigation, Wrapper } from "..";
+import { Logo, Navigation, Wrapper } from "@src/components";
 import styles from "./styles.module.scss";
 
 export const Header = () => {

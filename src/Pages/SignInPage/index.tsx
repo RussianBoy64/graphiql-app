@@ -1,11 +1,18 @@
-import { Form } from "@components/UI/Form";
-import { EmailInput } from "@src/components/UI/EmailInput";
-import { PasswordInput } from "@src/components/UI/PasswordInput";
-import { Button } from "@src/components";
+import { Button, EmailInput, Form, PasswordInput } from "@src/components";
+import { useTypeSelector, useTypeDispatch } from "@src/redux/store";
+import {
+  setEmailSignIn,
+  setPasswordSignIn,
+} from "@src/redux/reducers/authorizationReducer";
 
 import styles from "./styles.module.scss";
 
 export const SignInPage = () => {
+  const { emailSignIn, passwordSignIn } = useTypeSelector(
+    (state) => state.login
+  );
+  const dispatch = useTypeDispatch();
+
   return (
     <section className={styles.signInPage}>
       {/*TODO: add SignInPage submit logic*/}
@@ -13,20 +20,20 @@ export const SignInPage = () => {
         <h3 className={styles.signInPage__title}>Login</h3>
         <EmailInput
           labelText="E-mail:"
-          inputValue={"hello"}
+          inputValue={emailSignIn}
           inputPlaceholder={"your@email.com"}
           changeHandler={(event) => {
             const target = event.target as HTMLInputElement;
-            console.log(target.value);
+            dispatch(setEmailSignIn(target.value));
           }}
         />
         <PasswordInput
           labelText="Password:"
-          inputValue={"password"}
+          inputValue={passwordSignIn}
           inputPlaceholder={"Password"}
           changeHandler={(event) => {
             const target = event.target as HTMLInputElement;
-            console.log(target.value);
+            dispatch(setPasswordSignIn(target.value));
           }}
         />
         <Button buttonText="Login" />

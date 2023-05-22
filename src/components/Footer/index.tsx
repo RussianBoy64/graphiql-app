@@ -1,4 +1,4 @@
-import { Wrapper } from "..";
+import { Wrapper } from "@src/components";
 import styles from "./styles.module.scss";
 
 export const Footer = () => {
