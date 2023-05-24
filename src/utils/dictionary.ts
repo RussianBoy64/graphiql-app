@@ -32,4 +32,32 @@ export const dictionary = {
     en: 'Sign Up',
     ru: 'Регистрация',
   },
+  notFoundTitle: {
+    en: 'Oops!',
+    ru: 'Ой!',
+  },
+  notFoundSubtitle: {
+    en: '404 - page not found!',
+    ru: '404 - страница не найдена!',
+  },
+  notFoundText: {
+    en: 'The page you are looking for might have been removed, had its name changed or temporarily unavaliable.',
+    ru: 'Страница, которую вы ищете, могла быть удалена, ее название было изменено или она временно недоступна.',
+  },
+  welcomePage: {
+    en: 'Welcome Page',
+    ru: 'На главную',
+  },
+  email: {
+    en: 'E-mail',
+    ru: 'Почта',
+  },
+  password: {
+    en: 'Password',
+    ru: 'Пароль',
+  },
+  passwordConfirm: {
+    en: 'Confirm password',
+    ru: 'Подтверждение пароля',
+  },
 };

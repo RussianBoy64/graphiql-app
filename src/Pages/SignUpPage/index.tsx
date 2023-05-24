@@ -5,6 +5,7 @@ import {
   setPasswordSignUp,
   setConfirmPasswordSignUp,
 } from "@src/redux/reducers/authorizationReducer";
+import { useTranslate } from "@src/utils/dictionary";
 
 import styles from "./styles.module.scss";
 
@@ -17,9 +18,9 @@ export const SignUpPage = () => {
     <section className={styles.signUpPage}>
       {/*TODO: add SignUpPage submit logic*/}
       <Form submitHandler={() => {}}>
-        <h3 className={styles.signUpPage__title}>Registration</h3>
+        <h3 className={styles.signUpPage__title}>{useTranslate('SignUp')}</h3>
         <EmailInput
-          labelText="E-mail:"
+          labelText={useTranslate('email')}
           inputValue={emailSignUp}
           inputPlaceholder={"your@email.com"}
           changeHandler={(event) => {
@@ -28,24 +29,24 @@ export const SignUpPage = () => {
           }}
         />
         <PasswordInput
-          labelText="Password:"
+          labelText={useTranslate('password')}
           inputValue={passwordSignUp}
-          inputPlaceholder={"Password"}
+          inputPlaceholder={useTranslate('password')}
           changeHandler={(event) => {
             const target = event.target as HTMLInputElement;
             dispatch(setPasswordSignUp(target.value));
           }}
         />
         <PasswordInput
-          labelText="Confirm password:"
+          labelText={useTranslate('passwordConfirm')}
           inputValue={confirmPasswordSignUp}
-          inputPlaceholder={"Confirm password"}
+          inputPlaceholder={useTranslate('passwordConfirm')}
           changeHandler={(event) => {
             const target = event.target as HTMLInputElement;
             dispatch(setConfirmPasswordSignUp(target.value));
           }}
         />
-        <Button buttonText="Register" />
+        <Button buttonText={useTranslate('SignUp')} />
       </Form>
     </section>
   );
