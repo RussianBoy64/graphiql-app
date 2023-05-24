@@ -28,7 +28,7 @@ export const Header = () => {
       <Wrapper layout={styles.headerLayout}>
         <Logo />
         <div className={styles.buttonsBlock}>
-          <button onClick={() => dispatch(setLanguage(language === 'en' ? 'ru' : 'en'))}>{language === 'en' ? 'en' : 'ru'}</button>
+          <button onClick={() => dispatch(setLanguage(language === 'en' ? 'ru' : 'en'))}>{language === 'en' ? 'ru' : 'en'}</button>
           <Navigation />
         </div>
       </Wrapper>

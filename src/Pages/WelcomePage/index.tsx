@@ -1,26 +1,23 @@
 import { AboutStudent } from "@components/index";
 import { aboutStudent } from "../../utils/aboutStudents";
-import { useTypeSelector} from "@src/redux/store";
-import { translate } from "@src/utils/dictionary";
+import { useTranslate } from "@src/utils/dictionary";
 
 import styles from "./styles.module.scss";
 
 export const WelcomePage = () => {
-  const language = useTypeSelector((state) => state.language.value);
   return (
     <section className={styles.mainPage}>
-      <h3 className={styles.title}>{translate('about', language)}</h3>
-      <p className={styles.about}>
-        The final task of RSSchool React2023Q1 course. Description and technical
-        requirements you can see{" "}
+      <h3 className={styles.title}>{useTranslate('welcomeAboutTitle')}</h3>
+      <p className={styles.about}>{useTranslate('welcomeAbout')}
+        {" "}
         <a
           className={styles.link}
           href="https://github.com/rolling-scopes-school/tasks/blob/master/react/modules/graphiql.md"
         >
-          here.
+          {useTranslate('here')}.
         </a>
       </p>
-      <h1 className={styles.title}>Raccoons team</h1>
+      <h1 className={styles.title}>{useTranslate('Raccoons team')}</h1>
       {aboutStudent.map((student, index) => {
         return (
           <AboutStudent
