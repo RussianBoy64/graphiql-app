@@ -8,6 +8,7 @@ const languageSlice = createSlice({
   reducers: {
     setLanguage(state, action: PayloadAction<string>) {
       state = action.payload;
+      localStorage.setItem('lang', action.payload);
     },
   },
 });
