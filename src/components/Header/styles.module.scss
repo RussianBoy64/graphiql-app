@@ -1,5 +1,5 @@
-@import "@styles/colors.scss";
-@import "@styles/templates.scss";
+@import '@styles/colors.scss';
+@import '@styles/templates.scss';
 
 .header {
   display: flex;
@@ -13,6 +13,13 @@
 .headerLayout {
   display: flex;
   flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttonsBlock {
+  display: flex;
+  gap: 20px;
   align-items: center;
   justify-content: space-between;
 }
