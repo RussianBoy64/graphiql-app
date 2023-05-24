@@ -1,5 +1,5 @@
-@import "@styles/colors";
-@import "@styles/templates";
+@import '@styles/colors';
+@import '@styles/templates';
 
 .image {
   width: 200px;
@@ -16,11 +16,13 @@
   padding: 1rem;
   @include shadow;
   border-radius: 10px;
+  width: 100%;
 }
 
 .wrapper_text {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .name {

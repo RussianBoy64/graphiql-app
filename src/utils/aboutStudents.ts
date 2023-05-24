@@ -1,5 +1,6 @@
 import PhotoAleksandra from '../assets//images/Aleksandra.jpg';
 import PhotoVladimir from '../assets//images/Vladimir.jpg';
+import PhotoAlexander from '../assets//images/Alexander.jpg';
 
 export const aboutStudent = [
   {
@@ -34,6 +35,21 @@ export const aboutStudent = [
     description: {
       en: `I\`am frontend developer from Saratov. I like to play football, travel and drink beer. My dream is to become successful senior developer and create usefull aplications that help people make it\`s life better.`,
       ru: `Я фронтенд разработчик из Саратова. Я люблю играть в футбол, путешествовать и пить пиво. Я мечтаю стать успешным старшим разработчиком и создавать полезные приложения, которые помогают людям сделать их жизнь лучше.`,
+    },
+  },
+  {
+    name: {
+      en: 'Alexander Martinovich',
+      ru: 'Александр Мартинович',
+    },
+    profession: {
+      en: 'Front End Developer',
+      ru: 'Фронтенд Разработчик',
+    },
+    photo: PhotoAlexander,
+    description: {
+      en: `I\`am almost a frontend developer :)`,
+      ru: `Я фронтенд разработчик на все руки, с огромнейшим стажем и опытом работы на всех языках программированния (ещё даже не придуманных).`,
     },
   },
 ];
