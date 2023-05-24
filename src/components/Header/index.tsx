@@ -3,6 +3,8 @@ import { Logo, Navigation, Wrapper } from "@src/components";
 import { useTypeSelector, useTypeDispatch } from "@src/redux/store";
 import styles from "./styles.module.scss";
 import { setLanguage } from "@src/redux/reducers/langReducer";
+import RuIcon from '../../assets//images/ru_icon.png';
+import EnIcon from '../../assets//images/us_icon.png';
 
 export const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -28,7 +30,9 @@ export const Header = () => {
       <Wrapper layout={styles.headerLayout}>
         <Logo />
         <div className={styles.buttonsBlock}>
-          <button onClick={() => dispatch(setLanguage(language === 'en' ? 'ru' : 'en'))}>{language === 'en' ? 'ru' : 'en'}</button>
+          <button className={styles.button} onClick={() => dispatch(setLanguage(language === 'en' ? 'ru' : 'en'))}>
+            <img className={styles.image} src={language === 'en' ? RuIcon : EnIcon} alt="Photo" />
+          </button>
           <Navigation />
         </div>
       </Wrapper>

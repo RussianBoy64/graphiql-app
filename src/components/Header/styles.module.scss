@@ -24,6 +24,17 @@
   justify-content: space-between;
 }
 
+.button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  opacity: 0.5;
+}
+
 .sticky {
   position: sticky;
   top: -1px;
