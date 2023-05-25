@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Logo, Navigation, Wrapper } from "@src/components";
 import { useTypeSelector, useTypeDispatch } from "@src/redux/store";
 import { setLanguage } from "@src/redux/reducers/langReducer";
-import RuIcon from "../../assets//images/ru_icon.png";
-import EnIcon from "../../assets//images/us_icon.png";
+import RuIcon from "@assets/images/ru_icon.png";
+import EnIcon from "@assets/images/us_icon.png";
 
 import styles from "./styles.module.scss";
 
