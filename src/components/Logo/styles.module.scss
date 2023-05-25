@@ -4,6 +4,7 @@
 .logo {
   @include textSecondary(1.5rem);
   color: $accent-dark;
+  margin-right: auto;
 }
 
 @media (max-width: 500px) {

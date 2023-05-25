@@ -6,6 +6,7 @@ export interface AuthorizationState {
   emailSignUp: string;
   passwordSignUp: string;
   confirmPasswordSignUp: string;
+  isAuth: boolean;
 }
 
 const initialState: AuthorizationState = {
@@ -14,6 +15,7 @@ const initialState: AuthorizationState = {
   emailSignUp: "",
   passwordSignUp: "",
   confirmPasswordSignUp: "",
+  isAuth: false,
 };
 
 export const authorizationSlice = createSlice({

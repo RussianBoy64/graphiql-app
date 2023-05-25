@@ -9,6 +9,7 @@
   border-radius: 0.8rem;
   outline: none;
   background-color: transparent;
+  white-space: nowrap;
   cursor: pointer;
   @include transition;
 
@@ -53,5 +54,11 @@
 
   &:active {
     background-color: $accent-light;
+  }
+}
+
+@media (max-width: 500px) {
+  .button {
+    padding: 0.5rem 0.7rem;
   }
 }

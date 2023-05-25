@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import styles from "./styles.module.scss";
 
 interface IForm {
-  submitHandler: () => void;
+  submitHandler: (event: React.SyntheticEvent) => void;
   children: ReactNode;
 }
 
