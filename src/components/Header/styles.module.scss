@@ -1,5 +1,5 @@
-@import "@styles/colors.scss";
-@import "@styles/templates.scss";
+@import '@styles/colors.scss';
+@import '@styles/templates.scss';
 
 .header {
   display: flex;
@@ -15,6 +15,24 @@
   flex-grow: 1;
   align-items: center;
   justify-content: space-between;
+}
+
+.buttonsBlock {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  opacity: 0.5;
 }
 
 .sticky {

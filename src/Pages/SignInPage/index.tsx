@@ -4,6 +4,7 @@ import {
   setEmailSignIn,
   setPasswordSignIn,
 } from "@src/redux/reducers/authorizationReducer";
+import { useTranslate } from "@src/utils/dictionary";
 
 import styles from "./styles.module.scss";
 
@@ -17,9 +18,9 @@ export const SignInPage = () => {
     <section className={styles.signInPage}>
       {/*TODO: add SignInPage submit logic*/}
       <Form submitHandler={() => {}}>
-        <h3 className={styles.signInPage__title}>Login</h3>
+        <h3 className={styles.signInPage__title}>{useTranslate('SignIn')}</h3>
         <EmailInput
-          labelText="E-mail:"
+          labelText={useTranslate('email')}
           inputValue={emailSignIn}
           inputPlaceholder={"your@email.com"}
           changeHandler={(event) => {
@@ -28,15 +29,15 @@ export const SignInPage = () => {
           }}
         />
         <PasswordInput
-          labelText="Password:"
+          labelText={useTranslate('password')}
           inputValue={passwordSignIn}
-          inputPlaceholder={"Password"}
+          inputPlaceholder={useTranslate('password')}
           changeHandler={(event) => {
             const target = event.target as HTMLInputElement;
             dispatch(setPasswordSignIn(target.value));
           }}
         />
-        <Button buttonText="Login" />
+        <Button buttonText={useTranslate('SignIn')} />
       </Form>
     </section>
   );
