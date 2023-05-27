@@ -7,6 +7,7 @@ export enum DictionaryWords {
   RaccoonsTeam,
   SignIn,
   SignUp,
+  SignUpAndLogin,
   LogOut,
   MainPage,
   notFoundTitle,
@@ -64,13 +65,17 @@ export const dictionary: IDictionary = {
     en: "Sign Up",
     ru: "Регистрация",
   },
+  [DictionaryWords.SignUpAndLogin]: {
+    en: "Sign Up & Login",
+    ru: "Зарегистрироваться и войти",
+  },
   [DictionaryWords.LogOut]: {
     en: "Log out",
     ru: "Выйти",
   },
   [DictionaryWords.MainPage]: {
     en: "Go to Main Page",
-    ru: "На Главную",
+    ru: "На главную",
   },
   [DictionaryWords.notFoundTitle]: {
     en: "Oops!",
