@@ -16,7 +16,7 @@ export const PasswordInput = ({
   inputPlaceholder,
   changeHandler,
 }: IPasswordInput) => {
-  let [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const onClickHandler = () => {
     setIsPasswordVisible(!isPasswordVisible);
