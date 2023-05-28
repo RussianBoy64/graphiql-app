@@ -15,8 +15,11 @@ export enum DictionaryWords {
   notFoundText,
   welcomePage,
   email,
+  emailError,
   password,
+  passwordError,
   passwordConfirm,
+  passwordConfirmError,
 }
 
 interface IDictionary {
@@ -97,12 +100,24 @@ export const dictionary: IDictionary = {
     en: "E-mail",
     ru: "Почта",
   },
+  [DictionaryWords.emailError]: {
+    en: "Email is invalid",
+    ru: "Адрес почты не верен",
+  },
   [DictionaryWords.password]: {
     en: "Password",
     ru: "Пароль",
   },
+  [DictionaryWords.passwordError]: {
+    en: "Password strength - minimum 8 symbols, at least one letter, one digit, one special character",
+    ru: "Пароль - минимум 8 символов, хотябы 1 заглавная буква, 1 цифра, 1 спецсимвол",
+  },
   [DictionaryWords.passwordConfirm]: {
     en: "Confirm password",
     ru: "Подтверждение пароля",
+  },
+  [DictionaryWords.passwordConfirmError]: {
+    en: "Passwords not equal",
+    ru: "Пароли не совпадают",
   },
 };

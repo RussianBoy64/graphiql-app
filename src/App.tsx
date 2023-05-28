@@ -18,7 +18,7 @@ function App() {
         dispatch(setCurrentUser({ email: user.email, uid: user.uid }));
       }
     });
-  }, []);
+  });
 
   return (
     <>

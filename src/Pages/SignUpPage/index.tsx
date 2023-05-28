@@ -6,47 +6,76 @@ import {
   setConfirmPasswordSignUp,
   clearSignUp,
   setCurrentUser,
+  setEmailSignUpValidity,
+  setPasswordSignUpValidity,
+  setConfirmPasswordSignUpValidity,
 } from "@src/redux/reducers/authorizationReducer";
 import { Navigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { DictionaryWords, useTranslate } from "@src/utils/dictionary";
 import { routes } from "@src/routes";
+import { validateEmail } from "@src/utils/validateEmail";
+import { validatePassword } from "@src/utils/validatePassword";
 
 import styles from "./styles.module.scss";
 
 export const SignUpPage = () => {
   const { main } = routes;
-  const { emailSignUp, passwordSignUp, confirmPasswordSignUp, currentUser } =
-    useTypeSelector((state) => state.login);
-  const [emailText, passwordText, passwordConfirmText, signUpText, signUpAndLoginText] =
-    useTranslate(
-      DictionaryWords.email,
-      DictionaryWords.password,
-      DictionaryWords.passwordConfirm,
-      DictionaryWords.SignUp,
-      DictionaryWords.SignUpAndLogin
-    );
+  const {
+    emailSignUp,
+    isEmailSignUpValid,
+    passwordSignUp,
+    isPasswordSignUpValid,
+    confirmPasswordSignUp,
+    isConfirmPasswordSignUpValid,
+    currentUser,
+  } = useTypeSelector((state) => state.login);
+  const [
+    emailText,
+    emailErrorText,
+    passwordText,
+    passwordErrorText,
+    passwordConfirmText,
+    passwordConfirmErrorText,
+    signUpText,
+    signUpAndLoginText,
+  ] = useTranslate(
+    DictionaryWords.email,
+    DictionaryWords.emailError,
+    DictionaryWords.password,
+    DictionaryWords.passwordError,
+    DictionaryWords.passwordConfirm,
+    DictionaryWords.passwordConfirmError,
+    DictionaryWords.SignUp,
+    DictionaryWords.SignUpAndLogin
+  );
   const dispatch = useTypeDispatch();
 
   const signUpHandler = (event: React.SyntheticEvent) => {
     event.preventDefault();
 
-    const auth = getAuth();
+    const isEmailValid = validateEmail(emailSignUp);
+    const isPasswordValid = validatePassword(passwordSignUp);
+    const isConfirmPasswordValid = passwordSignUp === confirmPasswordSignUp;
 
-    createUserWithEmailAndPassword(auth, emailSignUp, passwordSignUp)
-      .then((userCredential) => {
-        const user = userCredential.user;
+    dispatch(setEmailSignUpValidity(isEmailValid));
+    dispatch(setPasswordSignUpValidity(isPasswordValid));
+    dispatch(setConfirmPasswordSignUpValidity(isConfirmPasswordValid));
 
-        if (user.email) {
-          dispatch(setCurrentUser({ email: user.email, uid: user.uid }));
-          dispatch(clearSignUp());
+    if (isEmailValid && isPasswordValid && isConfirmPasswordValid) {
+      const auth = getAuth();
+
+      createUserWithEmailAndPassword(auth, emailSignUp, passwordSignUp).then(
+        (userCredential) => {
+          const user = userCredential.user;
+
+          if (user.email) {
+            dispatch(setCurrentUser({ email: user.email, uid: user.uid }));
+            dispatch(clearSignUp());
+          }
         }
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(`Code: ${errorCode}; Message: ${errorMessage}`);
-      });
+      );
+    }
   };
 
   return (
@@ -58,6 +87,7 @@ export const SignUpPage = () => {
         <EmailInput
           labelText={emailText}
           inputValue={emailSignUp}
+          isEmailValid={isEmailSignUpValid}
           inputPlaceholder={"your@email.com"}
           changeHandler={(event) => {
             const target = event.target as HTMLInputElement;
@@ -68,6 +98,7 @@ export const SignUpPage = () => {
           labelText={passwordText}
           inputValue={passwordSignUp}
           inputPlaceholder={passwordText}
+          isPasswordValid={isPasswordSignUpValid}
           changeHandler={(event) => {
             const target = event.target as HTMLInputElement;
             dispatch(setPasswordSignUp(target.value));
@@ -77,6 +108,7 @@ export const SignUpPage = () => {
           labelText={passwordConfirmText}
           inputValue={confirmPasswordSignUp}
           inputPlaceholder={passwordConfirmText}
+          isPasswordValid={isConfirmPasswordSignUpValid}
           changeHandler={(event) => {
             const target = event.target as HTMLInputElement;
             dispatch(setConfirmPasswordSignUp(target.value));
@@ -84,6 +116,15 @@ export const SignUpPage = () => {
         />
         <Button buttonText={signUpAndLoginText} />
       </Form>
+      {!isEmailSignUpValid && (
+        <p className={styles.signUpPage__error}>{emailErrorText}</p>
+      )}
+      {!isPasswordSignUpValid && (
+        <p className={styles.signUpPage__error}>{passwordErrorText}</p>
+      )}
+      {!isConfirmPasswordSignUpValid && (
+        <p className={styles.signUpPage__error}>{passwordConfirmErrorText}</p>
+      )}
     </section>
   );
 };

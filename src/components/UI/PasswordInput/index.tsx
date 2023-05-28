@@ -7,6 +7,7 @@ interface IPasswordInput {
   labelText: string;
   inputValue: string;
   inputPlaceholder?: string;
+  isPasswordValid: boolean;
   changeHandler: (event: SyntheticEvent) => void;
 }
 
@@ -14,6 +15,7 @@ export const PasswordInput = ({
   labelText,
   inputValue,
   inputPlaceholder,
+  isPasswordValid,
   changeHandler,
 }: IPasswordInput) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -23,22 +25,25 @@ export const PasswordInput = ({
   };
 
   const getButtonStyles = () => {
-    const buttonStyles = [styles.emailButton];
+    const buttonStyles = [styles.passwordButton];
 
     isPasswordVisible
-      ? buttonStyles.push(styles.emailButton_eyeClosed)
-      : buttonStyles.push(styles.emailButton_eyeOpen);
+      ? buttonStyles.push(styles.passwordButton_eyeClosed)
+      : buttonStyles.push(styles.passwordButton_eyeOpen);
 
     return buttonStyles.join(" ");
   };
   const inputType = isPasswordVisible ? inputTypes.text : inputTypes.password;
   const buttonStyle = getButtonStyles();
+  const inputStyles = [styles.passwordInput];
+
+  if (!isPasswordValid) inputStyles.push(styles.passwordInput_invalid);
 
   return (
-    <label className={styles.emailLabel}>
+    <label className={styles.passwordLabel}>
       {labelText}
       <input
-        className={styles.emailInput}
+        className={styles.passwordInput}
         type={inputType}
         value={inputValue}
         onChange={changeHandler}

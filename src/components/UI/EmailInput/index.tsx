@@ -7,6 +7,7 @@ interface IEmailInput {
   labelText: string;
   inputValue: string;
   inputPlaceholder?: string;
+  isEmailValid: boolean;
   changeHandler: (event: SyntheticEvent) => void;
 }
 
@@ -14,14 +15,19 @@ export const EmailInput = ({
   labelText,
   inputValue,
   inputPlaceholder,
+  isEmailValid,
   changeHandler,
 }: IEmailInput) => {
+  const inputStyles = [styles.emailInput];
+
+  if (!isEmailValid) inputStyles.push(styles.emailInput_invalid);
+
   return (
     <label className={styles.emailLabel}>
       {labelText}
       <input
-        className={styles.emailInput}
-        type={inputTypes.email}
+        className={inputStyles.join(" ")}
+        type={inputTypes.text}
         value={inputValue}
         onChange={changeHandler}
         placeholder={inputPlaceholder}
