@@ -24,5 +24,9 @@
     &:focus {
       border-bottom: 2px solid $accent-dark;
     }
+
+    &_invalid {
+      border-bottom: 2px solid red;
+    }
   }
 }

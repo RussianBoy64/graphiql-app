@@ -1,7 +1,7 @@
 @import "@styles/colors";
 @import "@styles/templates";
 
-.email {
+.password {
   &Label {
     position: relative;
     display: inline-block;
@@ -24,6 +24,10 @@
 
     &:focus {
       border-bottom: 2px solid $accent-dark;
+    }
+
+    &_invalid {
+      border-bottom: 2px solid red;
     }
   }
 

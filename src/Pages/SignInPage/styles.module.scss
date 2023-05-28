@@ -3,6 +3,7 @@
 
 .signInPage {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 80vh;
@@ -10,5 +11,22 @@
   &__title {
     @include textSecondary(1.2rem);
     color: $accent-dark;
+  }
+
+  &__error {
+    margin-top: 1rem;
+    color: red;
+    text-align: center;
+    animation: appear 0.5s ease-in-out;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
