@@ -43,7 +43,7 @@ export const PasswordInput = ({
     <label className={styles.passwordLabel}>
       {labelText}
       <input
-        className={styles.passwordInput}
+        className={inputStyles.join(" ")}
         type={inputType}
         value={inputValue}
         onChange={changeHandler}
