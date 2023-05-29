@@ -14,7 +14,6 @@ function App() {
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user && user.email) {
-        console.log(user);
         dispatch(setCurrentUser({ email: user.email, uid: user.uid }));
       }
     });
