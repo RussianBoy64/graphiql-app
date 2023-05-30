@@ -1,0 +1,63 @@
+@import '@styles/colors';
+@import '@styles/templates';
+
+.image {
+  width: 200px;
+  height: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.wrapper_section {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  @include shadow;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.wrapper_text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.name {
+  @include textSecondary(2rem);
+  color: $accent-dark;
+}
+
+.profession {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.decription {
+  font-size: 1em;
+  max-width: 500px;
+}
+
+@media (max-width: 700px) {
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .profession {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 550px) {
+  .wrapper_section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wrapper_text {
+    align-items: center;
+    text-align: center;
+  }
+}

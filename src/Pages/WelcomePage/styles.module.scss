@@ -1,0 +1,39 @@
+@import "@styles/colors";
+@import "@styles/templates";
+
+.mainPage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  margin: 1rem 0;
+  @include textSecondary(1.5rem);
+  text-align: center;
+  text-transform: uppercase;
+  color: $accent-dark;
+}
+
+.about {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.link {
+  color: $accent-dark;
+  font-weight: 600;
+  @include transition;
+  cursor: pointer;
+
+  &:hover {
+    color: $accent-light;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $primary-dark;
+  }
+}

@@ -1,0 +1,32 @@
+@import "@styles/colors";
+@import "@styles/templates";
+
+.email {
+  &Label {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $accent-dark;
+    text-align: left;
+  }
+
+  &Input {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    font-weight: 500;
+    border: 2px solid $secondary-gray;
+    outline: none;
+    @include transition;
+
+    &:focus {
+      border-bottom: 2px solid $accent-dark;
+    }
+
+    &_invalid {
+      border-bottom: 2px solid red;
+    }
+  }
+}

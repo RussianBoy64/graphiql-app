@@ -1,0 +1,13 @@
+@mixin transition {
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin textSecondary($fontSize) {
+  font-family: "Sriracha", cursive;
+  font-size: $fontSize;
+  text-transform: uppercase;
+}
+
+@mixin shadow {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

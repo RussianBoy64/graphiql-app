@@ -1,0 +1,11 @@
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 500px) {
+  .nav {
+    font-size: 0.8rem;
+  }
+}

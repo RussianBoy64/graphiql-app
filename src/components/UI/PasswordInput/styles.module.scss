@@ -1,0 +1,66 @@
+@import "@styles/colors";
+@import "@styles/templates";
+
+.password {
+  &Label {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $accent-dark;
+    text-align: left;
+  }
+
+  &Input {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.5rem 3rem 0.5rem 0.5rem;
+    font-weight: 500;
+    border: 2px solid $secondary-gray;
+    outline: none;
+    @include transition;
+
+    &:focus {
+      border-bottom: 2px solid $accent-dark;
+    }
+
+    &_invalid {
+      border-bottom: 2px solid red;
+    }
+  }
+
+  &Button {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    outline: none;
+    background-color: transparent;
+
+    background-size: contain;
+    @include transition;
+    cursor: pointer;
+
+    &:hover {
+      border: 2px solid $accent-light;
+    }
+
+    &:active {
+      background-color: $accent-light;
+    }
+
+    &_eyeOpen {
+      background-image: url("@assets/svg/eye-open.svg");
+    }
+
+    &_eyeClosed {
+      background-image: url("@assets/svg/eye-closed.svg");
+    }
+  }
+}

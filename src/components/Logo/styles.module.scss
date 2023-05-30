@@ -1,0 +1,14 @@
+@import "@styles/colors.scss";
+@import "@styles/templates.scss";
+
+.logo {
+  @include textSecondary(1.5rem);
+  color: $accent-dark;
+  margin-right: auto;
+}
+
+@media (max-width: 500px) {
+  .logo {
+    @include textSecondary(0.8rem);
+  }
+}
